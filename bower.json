@@ -1,0 +1,22 @@
+{
+    "name": "BooMat",
+    "homepage": "https://github.com/DharmeshPipariya/BooMat",
+    "authors": [
+        "Dharmesh Pipariya"
+    ],
+    "description": "BooMat is a html5 and css framework for web and mobile first application with responsive.",
+    "moduleType": "globals",
+    "main": [
+        "sass/_boomat.scss",
+        "js/boomat.js"
+    ],
+    "keywords": [
+        "boomat",
+        "bootstrap",
+        "material"
+    ],
+    "dependencies": {
+        "jquery": ">= 1.9.0"
+    },
+    "version": "0.0.1"
+}
