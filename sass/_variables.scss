@@ -16,10 +16,10 @@ $gray-light: lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter: lighten($gray-base, 93.5%) !default; // #eee
 
 $brand-primary: #106cc8 !default;
-$brand-success: #5cb85c !default;
-$brand-info: #5bc0de !default;
-$brand-warning: #f0ad4e !default;
-$brand-danger: #d9534f !default;
+$brand-success: #4caf50 !default;
+$brand-info: #00bcd4 !default;
+$brand-warning: #ff9800 !default;
+$brand-danger: #ea1c0d !default;
 
 
 //== Scaffolding
@@ -27,7 +27,7 @@ $brand-danger: #d9534f !default;
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg: #efefef !default;
+$body-bg: #efefef !default; //lighten(#000000, 93.5)/96/98
 //** Global text color on `<body>`.
 $text-color: lighten($gray-base, 28%) !default;
 
