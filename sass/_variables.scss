@@ -84,8 +84,8 @@ $box-shadow-raised-hover: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0,
 $cubic: cubic-bezier(.64,.09,.08,1);
 
 $border-radius-small: 3px;
-$border-radius-med: 6px; 
-$border-radius-big: 10px; 
+$border-radius-med: 6px;
+$border-radius-big: 10px;
 
 // Spacing
 $space-big: 40px;
@@ -93,13 +93,29 @@ $space-med: 20px;
 $space-small: 10px;
 
 // Media Queries
-$media-med: 1200px;
-$media-small: 900px;
-$media-tiny: 520px;
+$media-xs-min: 0 !default;
+$media-sm-min: 600px !default;
+$media-md-min: 960px !default;
+$media-lg-min: 1280px !default;
+$media-xl-min: 1920px !default;
+$media-xs-max: ($media-sm-min - 1) !default;
+$media-sm-max: ($media-md-min - 1) !default;
+$media-md-max: ($media-lg-min - 1) !default;
+$media-lg-max: ($media-xl-min - 1) !default;
 
+// Grid system
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
+$grid-float-breakpoint: $media-sm-min !default;
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
 
-
-
+// Container sizes
+$container-tablet: (540px + $grid-gutter-width) !default;
+$container-sm: $container-tablet !default;
+$container-desktop: (900px + $grid-gutter-width) !default;
+$container-md: $container-desktop !default;
+$container-large-desktop: (1220px + $grid-gutter-width) !default;
+$container-lg: $container-large-desktop !default;
 
 // Colors
 //
@@ -378,89 +394,6 @@ $zindex-tooltip: 1070 !default;
 $zindex-navbar-fixed: 1030 !default;
 $zindex-modal-background: 1040 !default;
 $zindex-modal: 1050 !default;
-
-
-//== Media queries breakpoints
-//
-//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
-
-// Extra small screen / phone
-//** Deprecated `$screen-xs` as of v3.0.1
-$screen-xs: 480px !default;
-//** Deprecated `$screen-xs-min` as of v3.2.0
-$screen-xs-min: $screen-xs !default;
-//** Deprecated `$screen-phone` as of v3.0.1
-$screen-phone: $screen-xs-min !default;
-
-// Small screen / tablet
-//** Deprecated `$screen-sm` as of v3.0.1
-$screen-sm: 600px !default;
-$screen-sm-min: $screen-sm !default;
-//** Deprecated `$screen-tablet` as of v3.0.1
-$screen-tablet: $screen-sm-min !default;
-
-// Medium screen / desktop
-//** Deprecated `$screen-md` as of v3.0.1
-$screen-md: 960px !default;
-$screen-md-min: $screen-md !default;
-//** Deprecated `$screen-desktop` as of v3.0.1
-$screen-desktop: $screen-md-min !default;
-
-// Large screen / wide desktop
-//** Deprecated `$screen-lg` as of v3.0.1
-$screen-lg: 1280px !default;
-$screen-lg-min: $screen-lg !default;
-//** Deprecated `$screen-lg-desktop` as of v3.0.1
-$screen-lg-desktop: $screen-lg-min !default;
-
-// Large screen / wide desktop
-//** Deprecated `$screen-xl` as of v3.0.1
-$screen-xl: 1920px !default;
-$screen-xl-min: $screen-xl !default;
-//** Deprecated `$screen-xl-desktop` as of v3.0.1
-$screen-xl-desktop: $screen-xl-min !default;
-
-// So media queries don't overlap when required, provide a maximum
-$screen-xs-max: ($screen-sm-min - 1) !default;
-$screen-sm-max: ($screen-md-min - 1) !default;
-$screen-md-max: ($screen-lg-min - 1) !default;
-$screen-lg-max: ($screen-xl-min - 1) !default;
-
-
-//== Grid system
-//
-//## Define your custom responsive grid.
-
-//** Number of columns in the grid.
-$grid-columns: 12 !default;
-//** Padding between columns. Gets divided in half for the left and right.
-$grid-gutter-width: 30px !default;
-// Navbar collapse
-//** Point at which the navbar becomes uncollapsed.
-$grid-float-breakpoint: $screen-sm-min !default;
-//** Point at which the navbar begins collapsing.
-$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
-
-
-//== Container sizes
-//
-//## Define the maximum width of `.container` for different screen sizes.
-
-// Small screen / tablet
-$container-tablet: (540px + $grid-gutter-width) !default;
-//** For `$screen-sm-min` and up.
-$container-sm: $container-tablet !default;
-
-// Medium screen / desktop
-$container-desktop: (900px + $grid-gutter-width) !default;
-//** For `$screen-md-min` and up.
-$container-md: $container-desktop !default;
-
-// Large screen / wide desktop
-$container-large-desktop: (1220px + $grid-gutter-width) !default;
-//** For `$screen-lg-min` and up.
-$container-lg: $container-large-desktop !default;
-
 
 //== Navbar
 //
