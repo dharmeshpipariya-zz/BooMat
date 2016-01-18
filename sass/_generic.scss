@@ -1,0 +1,38 @@
+//
+// Generic Classes
+// --------------------------------------------------
+
+
+// Margin
+.m-b-0 {
+    Margin eg: <div class="m-10 m-b-0"><div> Margin .m-0 .m-5 .m-10 .m-15 .m-20 .m-25 Margin Top .m-t-0 .m-t-5 .m-t-10 .m-t-15 .m-t-20 .m-t-25 Margin Right .m-r-0 .m-r-5 .m-r-10 .m-r-15 .m-r-20 .m-r-25 Margin Bottom .m-b-0 .m-b-5 .m-b-10 .m-b-15 .m-b-20 .m-b-25 Margin Left .m-l-0 .m-l-5 .m-l-10 .m-l-15 .m-l-20 .m-l-25;
+}
+
+
+Padding eg: <div class="p-10 p-b-0" > <div > Padding .p-0 .p-5 .p-10 .p-15 .p-20 .p-25 Padding Top .p-t-0 .p-t-5 .p-t-10 .p-t-15 .p-t-20 .p-t-25 Padding Right .p-r-0 .p-r-5 .p-r-10 .p-r-15 .p-r-20 .p-r-25 Padding Bottom .p-b-0 .p-b-5 .p-b-10 .p-b-15 .p-b-20 .p-b-25 Padding Left .p-l-0 .p-l-5 .p-l-10 .p-l-15 .p-l-20 .p-l-25 Font Size eg: <div class="f-10" > <div > .f-8 .f-9 .f-10 .f-11 .f-12 .f-13 .f-14 .f-15 .f-16 .f-17 .f-18 .f-19 .f-20 Background Color eg: <div class="bgm-blue" > <div > To see the color previews, please head on to colors.html .bgm-red .bgm-pink .bgm-purple .bgm-deeppurple .bgm-indigo .bgm-blue .bgm-lightblue .bgm-cyan .bgm-teal .bgm-green .bgm-lightgreen .bgm-lime .bgm-yellow .bgm-amber .bgm-orange .bgm-deeporange .bgm-brown .bgm-gray .bgm-bluegray .bgm-black .bgm-white Text Color eg: <div class="c-blue" > <div > To see the color previews, please head on to colors.html .c-red .c-pink .c-purple .c-deeppurple .c-indigo .c-blue .c-lightblue .c-cyan .c-teal .c-green .c-lightgreen .c-lime .c-yellow .c-amber .c-orange .c-deeporange .c-brown .c-gray .c-bluegray .c-black .c-white .text-muted Font Weight eg: <div class="f-500" > <div > .f-300 .f-400 .f-500 .f-700 Text Align eg: <div class="text-center" > <div > .text-center .text-right .text-left .text-justify Border Reset eg: <div class="b-0" > <div > .b-0 Position eg: <div class="p-relative" > <div > .p-relative .p-absolute .p-fixed .p-static Float eg: <div class="pull-right" > <div > .pull-right .pull-left Overflow eg: <div class="o-hidden" > <div > .o-hidden .o-visible .o-auto Full Width eg: <div class="w-100" > <div > .w-100 Image replacement eg: <div class="text-hide" > <div > Utilize the .text-hide class or mixin to help replace an element's text content with a background image. .text-hide Visibility eg: <div class="hidden" > <div > .show - display:block
+;
+
+.hidden - display:none
+;
+visibility:hidden
+;
+
+.invisible - visibility: hidden
+;
+
+
+
+
+Text Transform eg: <div class="t-uppercase" > <div > .t-uppercase Border Radius eg: <div class="brd-2" > <div > .brd-2
+//==================================================
+Malinda Hollaway Home Typography Widgets Tables Forms User Interface Charts Calendar Photo Gallery Generic Classes Sample Pages Buy this template Search People Jonathan Morris Available David Belle Last seen 3 hours ago Fredric Mitchell Jr. Availble Glenn Jecobs Availble Bill Phillips Last seen 3 days ago Wendy Mitchell Last seen 2 minutes ago Teena Bell Ann Busy GENERIC CLASS REFERENCE Following are the custom generic classes available with the template and can be used alongside with any elements. To modify or delete, please refer 'generic.less' Refresh Manage Widgets Widgets Settings Margin eg: <div class="m-10 m-b-0" > <div > Margin .m-0 .m-5 .m-10 .m-15 .m-20 .m-25 Margin Top .m-t-0 .m-t-5 .m-t-10 .m-t-15 .m-t-20 .m-t-25 Margin Right .m-r-0 .m-r-5 .m-r-10 .m-r-15 .m-r-20 .m-r-25 Margin Bottom .m-b-0 .m-b-5 .m-b-10 .m-b-15 .m-b-20 .m-b-25 Margin Left .m-l-0 .m-l-5 .m-l-10 .m-l-15 .m-l-20 .m-l-25 Font Size eg: <div class="f-10" > <div > .f-8 .f-9 .f-10 .f-11 .f-12 .f-13 .f-14 .f-15 .f-16 .f-17 .f-18 .f-19 .f-20 Text Color eg: <div class="c-blue" > <div > To see the color previews, please head on to colors.html .c-red .c-pink .c-purple .c-deeppurple .c-indigo .c-blue .c-lightblue .c-cyan .c-teal .c-green .c-lightgreen .c-lime .c-yellow .c-amber .c-orange .c-deeporange .c-brown .c-gray .c-bluegray .c-black .c-white .text-muted Text Align eg: <div class="text-center" > <div > .text-center .text-right .text-left .text-justify Position eg: <div class="p-relative" > <div > .p-relative .p-absolute .p-fixed .p-static Overflow eg: <div class="o-hidden" > <div > .o-hidden .o-visible .o-auto Image replacement eg: <div class="text-hide" > <div > Utilize the .text-hide class or mixin to help replace an element's text content with a background image. .text-hide Text Transform eg: <div class="t-uppercase" > <div > .t-uppercase Padding eg: <div class="p-10 p-b-0" > <div > Padding .p-0 .p-5 .p-10 .p-15 .p-20 .p-25 Padding Top .p-t-0 .p-t-5 .p-t-10 .p-t-15 .p-t-20 .p-t-25 Padding Right .p-r-0 .p-r-5 .p-r-10 .p-r-15 .p-r-20 .p-r-25 Padding Bottom .p-b-0 .p-b-5 .p-b-10 .p-b-15 .p-b-20 .p-b-25 Padding Left .p-l-0 .p-l-5 .p-l-10 .p-l-15 .p-l-20 .p-l-25 Background Color eg: <div class="bgm-blue" > <div > To see the color previews, please head on to colors.html .bgm-red .bgm-pink .bgm-purple .bgm-deeppurple .bgm-indigo .bgm-blue .bgm-lightblue .bgm-cyan .bgm-teal .bgm-green .bgm-lightgreen .bgm-lime .bgm-yellow .bgm-amber .bgm-orange .bgm-deeporange .bgm-brown .bgm-gray .bgm-bluegray .bgm-black .bgm-white Font Weight eg: <div class="f-500" > <div > .f-300 .f-400 .f-500 .f-700 Border Reset eg: <div class="b-0" > <div > .b-0 Float eg: <div class="pull-right" > <div > .pull-right .pull-left Full Width eg: <div class="w-100" > <div > .w-100 Visibility eg: <div class="hidden" > <div > .show - display:block
+;
+
+.hidden - display:none
+;
+visibility:hidden
+;
+
+.invisible - visibility: hidden
+;
+Border Radius eg: <div class="brd-2" > <div > .brd-2 Copyright © 2015 Material Admin HomeDashboardReportsSupportContact

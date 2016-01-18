@@ -1,0 +1,19 @@
+//
+// Header
+// --------------------------------------------------
+
+
+.header {
+    position: relative;
+    border: 1px solid transparent;
+    padding: 35px 15px;
+    @include clearfix;
+
+    &.fixed {
+        position: fixed;
+
+        &.top {
+            top: 0;
+        }
+    }
+}

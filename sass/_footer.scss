@@ -1,0 +1,17 @@
+//
+// Footer
+// --------------------------------------------------
+
+
+.footer {
+    position: relative;
+    border: 1px solid transparent;
+    padding: 35px 15px 0;
+    @include clearfix;
+
+    .copy {
+        background: rgba(0,0,0,0.2);
+        border-top: 1px solid rgba(0,0,0,0.3);
+        padding: 15px;
+    }
+}
