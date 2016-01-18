@@ -1,0 +1,18 @@
+//Links
+
+a:not([class*="btn"]) {
+    text-decoration: none;
+    color: inherit;
+
+    &:active {
+        color: inherit;
+    }
+
+    &:hover, &:focus {
+        text-decoration: underline;
+    }
+}
+
+a[class*="btn"], a[class*="btn"]:hover, a[class*="btn"]:focus {
+    text-decoration: none;
+}
