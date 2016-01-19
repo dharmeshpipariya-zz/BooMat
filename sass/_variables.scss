@@ -71,9 +71,6 @@ $accent: $yellow;
 
 $body-background: $paper;
 
-// Grid
-$grid-columns: 12;
-
 // Decorative
 $box-shadow-card: 0 2px 5px 0 rgba(0, 0, 0, 0.12), 0 2px 10px 0 rgba(0, 0, 0, 0.09);
 $box-shadow-float: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -103,19 +100,17 @@ $media-sm-max: ($media-md-min - 1) !default;
 $media-md-max: ($media-lg-min - 1) !default;
 $media-lg-max: ($media-xl-min - 1) !default;
 
-// Grid system
+// Grid
 $grid-columns: 12 !default;
-$grid-gutter-width: 30px !default;
-$grid-float-breakpoint: $media-sm-min !default;
-$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+$grid-column-padding: 30px !default;
+/*$grid-float-breakpoint: $media-sm-min !default;
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;*/
 
 // Container sizes
-$container-tablet: (540px + $grid-gutter-width) !default;
-$container-sm: $container-tablet !default;
-$container-desktop: (900px + $grid-gutter-width) !default;
-$container-md: $container-desktop !default;
-$container-large-desktop: (1220px + $grid-gutter-width) !default;
-$container-lg: $container-large-desktop !default;
+$container-sm: (550px + $grid-column-padding) !default;
+$container-md: (910px + $grid-column-padding) !default;
+$container-lg: (1230px + $grid-column-padding) !default;
+$container-xl: (1870px + $grid-column-padding) !default;
 
 // Colors
 //
@@ -295,98 +290,41 @@ $btn-border-radius-small: $border-radius-small !default;
 
 
 //== Forms
-//
-//##
-
-//** `<input>` background color
 $input-bg: #fff !default;
-//** `<input disabled>` background color
 $input-bg-disabled: $gray-lighter !default;
-
-//** Text color for `<input>`s
 $input-color: $gray !default;
-//** `<input>` border color
 $input-border: #ccc !default;
-
-// TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
-//** Default `.form-control` border radius
-// This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
 $input-border-radius: $border-radius-base !default;
-//** Large `.form-control` border radius
 $input-border-radius-large: $border-radius-large !default;
-//** Small `.form-control` border radius
 $input-border-radius-small: $border-radius-small !default;
-
-//** Border color for inputs on focus
 $input-border-focus: #66afe9 !default;
-
-//** Placeholder text color
 $input-color-placeholder: #999 !default;
-
-//** Default `.form-control` height
 $input-height-base: ($line-height-computed + ($padding-base-vertical * 2) + 2) !default;
-//** Large `.form-control` height
 $input-height-large: (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2) !default;
-//** Small `.form-control` height
 $input-height-small: (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2) !default;
-
-//** `.form-group` margin
 $form-group-margin-bottom: 15px !default;
-
 $legend-color: $gray-dark !default;
 $legend-border-color: #e5e5e5 !default;
-
-//** Background color for textual input addons
 $input-group-addon-bg: $gray-lighter !default;
-//** Border color for textual input addons
 $input-group-addon-border-color: $input-border !default;
-
-//** Disabled cursor for form controls and buttons.
 $cursor-disabled: not-allowed !default;
 
 
 //== Dropdowns
-//
-//## Dropdown menu container and contents.
-
-//** Background for the dropdown menu.
 $dropdown-bg: #fff !default;
-//** Dropdown menu `border-color`.
 $dropdown-border: rgba(0,0,0,.15) !default;
-//** Dropdown menu `border-color` **for IE8**.
 $dropdown-fallback-border: #ccc !default;
-//** Divider color for between dropdown items.
 $dropdown-divider-bg: #e5e5e5 !default;
-
-//** Dropdown link text color.
 $dropdown-link-color: $gray-dark !default;
-//** Hover color for dropdown links.
 $dropdown-link-hover-color: darken($gray-dark, 5%) !default;
-//** Hover background for dropdown links.
 $dropdown-link-hover-bg: #f5f5f5 !default;
-
-//** Active dropdown menu item text color.
 $dropdown-link-active-color: $component-active-color !default;
-//** Active dropdown menu item background color.
 $dropdown-link-active-bg: $component-active-bg !default;
-
-//** Disabled dropdown menu item background color.
 $dropdown-link-disabled-color: $gray-light !default;
-
-//** Text color for headers within dropdown menus.
 $dropdown-header-color: $gray-light !default;
-
-//** Deprecated `$dropdown-caret-color` as of v3.1.0
 $dropdown-caret-color: #000 !default;
 
-
-//-- Z-index master list
-//
-// Warning: Avoid customizing these values. They're used for a bird's eye view
-// of components dependent on the z-axis and are designed to all work together.
-//
-// Note: These variables are not generated into the Customizer.
-
+// Z-index master list
 $zindex-navbar: 1000 !default;
 $zindex-dropdown: 1000 !default;
 $zindex-popover: 1060 !default;
@@ -395,23 +333,17 @@ $zindex-navbar-fixed: 1030 !default;
 $zindex-modal-background: 1040 !default;
 $zindex-modal: 1050 !default;
 
-//== Navbar
-//
-//##
-
-// Basics of a navbar
+// Navbar
 $navbar-height: 50px !default;
 $navbar-margin-bottom: $line-height-computed !default;
 $navbar-border-radius: $border-radius-base !default;
-$navbar-padding-horizontal: floor(($grid-gutter-width / 2)) !default;
+$navbar-padding-horizontal: floor(($grid-column-padding / 2)) !default;
 $navbar-padding-vertical: (($navbar-height - $line-height-computed) / 2) !default;
 $navbar-collapse-max-height: 340px !default;
-
 $navbar-default-color: #777 !default;
 $navbar-default-bg: #f8f8f8 !default;
 $navbar-default-border: darken($navbar-default-bg, 6.5%) !default;
 
-// Navbar links
 $navbar-default-link-color: #777 !default;
 $navbar-default-link-hover-color: #333 !default;
 $navbar-default-link-hover-bg: transparent !default;
@@ -420,24 +352,20 @@ $navbar-default-link-active-bg: darken($navbar-default-bg, 6.5%) !default;
 $navbar-default-link-disabled-color: #ccc !default;
 $navbar-default-link-disabled-bg: transparent !default;
 
-// Navbar brand label
 $navbar-default-brand-color: $navbar-default-link-color !default;
 $navbar-default-brand-hover-color: darken($navbar-default-brand-color, 10%) !default;
 $navbar-default-brand-hover-bg: transparent !default;
 
-// Navbar toggle
 $navbar-default-toggle-hover-bg: #ddd !default;
 $navbar-default-toggle-icon-bar-bg: #888 !default;
 $navbar-default-toggle-border-color: #ddd !default;
 
 
-//=== Inverted navbar
-// Reset inverted navbar basics
+// Inverted navbar
 $navbar-inverse-color: lighten($gray-light, 15%) !default;
 $navbar-inverse-bg: #222 !default;
 $navbar-inverse-border: darken($navbar-inverse-bg, 10%) !default;
 
-// Inverted navbar links
 $navbar-inverse-link-color: lighten($gray-light, 15%) !default;
 $navbar-inverse-link-hover-color: #fff !default;
 $navbar-inverse-link-hover-bg: transparent !default;
@@ -446,22 +374,16 @@ $navbar-inverse-link-active-bg: darken($navbar-inverse-bg, 10%) !default;
 $navbar-inverse-link-disabled-color: #444 !default;
 $navbar-inverse-link-disabled-bg: transparent !default;
 
-// Inverted navbar brand label
 $navbar-inverse-brand-color: $navbar-inverse-link-color !default;
 $navbar-inverse-brand-hover-color: #fff !default;
 $navbar-inverse-brand-hover-bg: transparent !default;
 
-// Inverted navbar toggle
 $navbar-inverse-toggle-hover-bg: #333 !default;
 $navbar-inverse-toggle-icon-bar-bg: #fff !default;
 $navbar-inverse-toggle-border-color: #333 !default;
 
 
-//== Navs
-//
-//##
-
-//=== Shared nav styles
+// Navs
 $nav-link-padding: 10px 15px !default;
 $nav-link-hover-bg: $gray-lighter !default;
 
