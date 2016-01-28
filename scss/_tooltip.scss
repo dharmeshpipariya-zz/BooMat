@@ -1,60 +1,71 @@
 
-.tooltip { //.tooltip, [data-tooltip]
+[data-tooltip] { //.tooltip, [data-tooltip]
     position: relative;
     display: inline-block;
-
-    &:before, &:after {
-        position: absolute;
-        content: attr(data-tooltip);
-        /*@include vendor('transform', translate3d(0, 0, 0));*/
-        visibility: hidden;
+    /*&:before, &:after {*/
+    /*position: absolute;*/
+    /*visibility: hidden;
         opacity: 0;
         z-index: $zindex-tooltip;
-        pointer-events: none;
-        /*@include vendor('transition', 0.3s ease);
+        pointer-events: none;*/
+    /*@include vendor('transition', 0.3s ease);
         @include vendor('transition-delay', $hideDelay);*/
-    }
+    /*}*/
     /**
 	 * tooltip arrow
 	 */
-    &:before {
-        /*position: absolute;
+    /*&:before {*/
+    /*position: absolute;
         width: 0;
         height: 0;
         border-color: transparent;
         border-style: solid;*/
-        content: '';
+    /*content: '';
         position: absolute;
         background: transparent;
         border: $arrowBorderWidth solid transparent;
-        // move z-index 1 up than :after so that it shows over box-shadow
-        z-index: $zIndex + 1;
-    }
+*/
+    /*}*/
     /**
 	 * tooltip body
 	 */
     &:after {
-        @include reset-text();
-        font-size: $font-size-sm;
-        content: attr(data-tooltip); // The magic!
-        background: $defaultColor;
-        color: white;
-        padding: $verticalPadding $horizontalPadding;
-        font-size: $fontSize;
-        line-height: $fontSize; // Vertical centering.
-        /*white-space: nowrap; // Prevent breaking to new line.*/
-        /*max-width: $tooltip-max-width;
-        padding: $tooltip-padding-y $tooltip-padding-x;
-        color: $tooltip-color;
+        position: absolute;
+        /*top: -500px;
+        left: -500px;*/
+        z-index: $$tooltip-zindex;
+        /*display: inline-block;*/
+        max-width: $tooltip-max-width;
+        padding: 8px;
+        font-size: $tooltip-font-size;
+        font-weight: 500;
+        line-height: 14px;
+        color: $tooltip-text-color;
         text-align: center;
-        background-color: $tooltip-bg;
-        @include border-radius($border-radius);*/
+        pointer-events: none;
+        visibility: hidden;
+        content: attr(data-tooltip);
+        background: $tooltip-background-color;
+        border-radius: 2px;
+        opacity: 0;
+        transform: scale(0);
+        transform-origin: top center;
+        will-change: transform;
+        //"font", "font-family", "font-size", "font-style", "font-weight", "font-variant", "font-size-adjust", "font-stretch", "font-effect", "font-emphasize", "font-emphasize-position", "font-emphasize-style", "font-smooth",
+        //"line-height", "color", "text-align","text-decoration", "text-transform",  "word-break", "word-wrap", "white-space", "vertical-align", "list-style",
+        // "pointer-events", "cursor", "visibility", "content",
+        //"background", "background-color", "background-image", "background-repeat", "background-attachment", "background-position", "background-position-x", "background-position-y","background-origin", "-webkit-background-size",
+        // "border", "border-color", "border-style", "border-width",  "border-radius" outline, opacity,
+        // "box-shadow",
+        // "transition", "transition-delay",  "transition-timing-function", "transition-duration", "transition-property",  "transform",  "transform-origin", "animation","animation-name",  "animation-duration","animation-play-state", "animation-timing-function", "animation-delay","animation-iteration-count", "animation-direction";
     }
 
-    &:hover, &:focus {
-        &:before, &:after {
+    &:hover /*, &:focus*/ {
+        /*&:before,*/
+        &:after {
             visibility: visible;
             opacity: $tooltip-opacity;
+            animation: pulse 200ms $animation-curve-linear-out-slow-in forwards;
         }
         /*&:after {
             background: lighten($grey, 10%);
@@ -62,24 +73,23 @@
             padding: $space-small*0.8;
         }*/
     }
-
-    &:hover {
+    /*&:hover {
         &:before, &:after {
             // $showDelay will apply as soon as element is hovered.
             @include vendor('transition-delay', $showDelay);
         }
-    }
+    }*/
     /*Position*/
     /*Right*/
-    &.right {
+    /*&.right {
         @include horizontal-positioned-tooltip('left', 1);
-    }
+    }*/
     /*Left*/
-    &.left {
+    /*&.left {
         @include horizontal-positioned-tooltip('right', -1);
-    }
+    }*/
     /*Top*/
-    &.top {
+    /*&.top {
         @include vertical-positioned-tooltip('bottom', -1);
 
         &.left {
@@ -89,9 +99,9 @@
         &.right {
             @include vertical-positioned-tooltip('bottom', -1, 1);
         }
-    }
+    }*/
     /*Bottom*/
-    &.bottom {
+    /*&.bottom {
         @include vertical-positioned-tooltip('top', 1);
 
         &.left {
@@ -101,8 +111,39 @@
         &.right {
             @include vertical-positioned-tooltip('top', 1, 1);
         }
+    }*/
+}
+
+/*.mdl-tooltip--large {
+  line-height: 14px;
+  font-size: $tooltip-font-size-large;
+  padding: 16px;
+}*/
+
+@keyframes pulse {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        // Fixes a weird bug with the interaction between Safari and the result of
+        // the SASS compilation for the animation.
+        // Essentially, we need to make sure that "50%" and "100%" don't get merged
+        // into a single "50%, 100%" entry, so we need to avoid them having any
+        // matching properties.
+        transform: scale(0.99);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        visibility: visible;
     }
 }
+
+
+
 
 [data-tooltip=''] {
     &:before, &:after {
@@ -114,7 +155,7 @@
 
 
 // Base class
-.tooltip {
+/*.tooltip {
 
     &.top {
         padding: $tooltip-arrow-width 0;
@@ -167,7 +208,7 @@
             border-left-color: $tooltip-arrow-color;
         }
     }
-}
+}*/
 
 
 
@@ -177,7 +218,7 @@
 // Declares some variables used within the library.
 
 // Prefix for all classes. By default, BEM naming convention is used
-$prefix: 'hint--' !default;
+/*$prefix: 'hint--' !default;
 
 // font size
 $fontSize: 12px;
@@ -225,7 +266,7 @@ $warningColor: hsl(38, 46%, 54%) !default;
 $infoColor: hsl(200, 50%, 45%) !default;
 
 // Success Color
-$successColor: hsl(121, 32%, 40%) !default;
+$successColor: hsl(121, 32%, 40%) !default;*/
 
 
 
@@ -235,7 +276,7 @@ $successColor: hsl(121, 32%, 40%) !default;
 // Place to store common mixins.
 
 // Vendor prefixer mixin.
-@mixin vendor($property, $value) {
+/*@mixin vendor($property, $value) {
     -webkit-#{$property}: $value;
     -moz-#{$property}: $value;
     #{$property}: $value;
@@ -272,7 +313,7 @@ $successColor: hsl(121, 32%, 40%) !default;
             @include vendor('transform', $value);
         }
     }
-}
+}*/
 
 
 
@@ -291,7 +332,7 @@ $successColor: hsl(121, 32%, 40%) !default;
  * 	4) hint--right
  */
 
-@mixin vertical-positioned-tooltip($propertyY, $transitionDirection, $xDirection: 0) {
+/*@mixin vertical-positioned-tooltip($propertyY, $transitionDirection, $xDirection: 0) {
     &:before {
         // get the arrow out
         margin-#{$propertyY}: -2 * $arrowBorderWidth;
@@ -348,13 +389,13 @@ $successColor: hsl(121, 32%, 40%) !default;
     &:hover, &:focus {
         @include set-margin('translateX', $transitionDirection);
     }
-}
+}*/
 
 
 /**
  * set default color for tooltip arrows
  */
-@include arrow-border-color($defaultColor);
+/*@include arrow-border-color($defaultColor);*/
 
 
 
@@ -366,15 +407,15 @@ $successColor: hsl(121, 32%, 40%) !default;
  *
  */
 
-.tooltip, [data-tooltip] {
-    /**
+/*.tooltip, [data-tooltip] {*/
+/**
 	 * tooltip body
 	 */
-    &:after {
+/*&:after {
         text-shadow: 0 -1px 0px darken($defaultColor, $textShadowDarkenAmount);
         box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
     }
-}
+}*/
 
 
 
@@ -394,42 +435,42 @@ $successColor: hsl(121, 32%, 40%) !default;
 
 
 // mixin to generate different color style tooltips
-@mixin hint-type($color) {
+/*@mixin hint-type($color) {
     &:after {
         background-color: $color;
         text-shadow: 0 -1px 0px darken($color, $textShadowDarkenAmount);
     }
     // generate arrow color style
     @include arrow-border-color($color);
-}
+}*/
 
 /**
  * Error
  */
-.#{$prefix}error {
+/*.#{$prefix}error {
     @include hint-type($errorColor);
-}
+}*/
 
 /**
  * Warning
  */
-.#{$prefix}warning {
+/*.#{$prefix}warning {
     @include hint-type($warningColor)
-}
+}*/
 
 /**
  * Info
  */
-.#{$prefix}info {
+/*.#{$prefix}info {
     @include hint-type($infoColor)
-}
+}*/
 
 /**
  * Success
  */
-.#{$prefix}success {
+/*.#{$prefix}success {
     @include hint-type($successColor)
-}
+}*/
 
 
 
@@ -444,7 +485,7 @@ $successColor: hsl(121, 32%, 40%) !default;
  *
  */
 
-.#{$prefix}always {
+/*.#{$prefix}always {
     &:after, &:before {
         opacity: 1;
         visibility: visible;
@@ -481,29 +522,7 @@ $successColor: hsl(121, 32%, 40%) !default;
     &.#{$prefix}right {
         @include set-margin('translateX', 1);
     }
-}
-
-
-
-
-
-/**
- * source: hint-rounded.scss
- *
- * Defines rounded corner tooltips.
- *
- * Classes added:
- * 	1) hint--rounded
- *
- */
-
-.#{$prefix}rounded {
-    &:after {
-        border-radius: 4px;
-    }
-}
-
-
+}*/
 
 
 
@@ -520,7 +539,7 @@ $successColor: hsl(121, 32%, 40%) !default;
  */
 
 // Remove animation from tooltips.
-.#{$prefix}no-animate {
+/*.#{$prefix}no-animate {
     &:before, &:after {
         @include vendor('transition-duration', 0ms);
     }
@@ -533,4 +552,4 @@ $successColor: hsl(121, 32%, 40%) !default;
         -moz-transition: opacity 0.3s ease, visibility 0.3s ease, -moz-transform 0.3s cubic-bezier(.71,1.7,.77,1.24);
         transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s cubic-bezier(.71,1.7,.77,1.24);
     }
-}
+}*/
