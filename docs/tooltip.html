@@ -1,0 +1,66 @@
+<div class="">
+    <style>
+        [data-tooltip] {
+            position: relative;
+            display: inline-block;
+            /**
+             * tooltip body
+             */
+        }
+
+            [data-tooltip]:after {
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                z-index: 999;
+                display: inline-block;
+                max-width: 200px;
+                padding: 4px 8px;
+                font-size: 10px;
+                font-weight: 500;
+                line-height: 14px;
+                color: #fff;
+                text-align: center;
+                /*pointer-events: none;*/
+                visibility: hidden;
+                content: attr(data-tooltip);
+                background: rgba(0,0,0,0.54);
+                border-radius: 2px;
+                opacity: 0;
+                white-space: pre;
+                word-wrap: break-word;
+                transform: scale(0);
+                transform-origin: top center;
+                will-change: transform;
+                transition: all .4s cubic-bezier(.25,.8,.25,1);
+                margin-top: 10px;
+            }
+
+            [data-tooltip]:hover {
+                /*&:before,*/
+            }
+
+                [data-tooltip]:hover:after {
+                    visibility: visible;
+                    opacity: 1;
+                    transform: scale(1) translateX(-50%);
+                }
+
+
+
+        [data-tooltip='']:before, [data-tooltip='']:after {
+            display: none !important;
+        }
+    </style>
+    <div class="container">
+        <h2 class="title">Tooltip</h2>
+        <p>Tooltip</p>
+        <div class="row">
+            <div class="col-sm-6">
+                <h4>Tooltip</h4>
+                <p>Tooltip is <span data-tooltip="test tooltip Upload">here</span>. hover me</p>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>
