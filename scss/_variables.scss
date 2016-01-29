@@ -1,7 +1,7 @@
 // Variables
 //
 // Copy settings from this file into the provided `_custom.scss` to override
-// the Bootstrap defaults without modifying key, versioned files.
+// the BooMat defaults without modifying key, versioned files.
 
 
 // Table of Contents
@@ -24,7 +24,7 @@
 
 // Colors
 //
-// Grayscale and brand colors for use across Bootstrap.
+// Grayscale and brand colors for use across BooMat.
 
 $gray-dark:                 #373a3c !default;
 $gray:                      #55595c !default;
@@ -54,7 +54,7 @@ $enable-grid-classes:       true !default;
 
 // Spacing
 //
-// Control the default styling of most Bootstrap elements by modifying these
+// Control the default styling of most BooMat elements by modifying these
 // variables. Mostly focused on spacing.
 
 $spacer:   1rem !default;
@@ -85,7 +85,7 @@ $border-width: 1px !default;
 //
 // Settings for the `<body>` element.
 
-$body-bg:    #fff !default;
+$body-bg:    #fafafa !default;
 $body-color: $gray-dark !default;
 
 
@@ -106,10 +106,10 @@ $link-hover-decoration: underline !default;
 
 $grid-breakpoints: (
   xs: 0,
-  sm: 544px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
+  sm: 600px,
+  md: 960px,
+  lg: 1280px,
+  xl: 1920px
 ) !default;
 
 
@@ -118,10 +118,10 @@ $grid-breakpoints: (
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-  sm: 576px,
-  md: 720px,
-  lg: 940px,
-  xl: 1140px
+  sm: 570px,
+  md: 920px,
+  lg: 1220px,
+  xl: 1840px
 ) !default;
 
 
@@ -234,7 +234,7 @@ $table-border-color:            $gray-lighter !default;
 
 // Buttons
 //
-// For each of Bootstrap's buttons, define text, background and border color.
+// For each of BooMat's buttons, define text, background and border color.
 
 $btn-padding-x:                  1rem !default;
 $btn-padding-y:                  .375rem !default;
@@ -407,7 +407,7 @@ $dropdown-bg:                    #fff !default;
 $dropdown-border-color:          rgba(0,0,0,.15) !default;
 $dropdown-border-width:          $border-width !default;
 $dropdown-divider-bg:            #e5e5e5 !default;
-$dropdown-box-shadow:            0 6px 12px rgba(0,0,0,.175) !default;
+$dropdown-box-shadow:            0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12) !default;
 
 $dropdown-link-color:            $gray-dark !default;
 $dropdown-link-hover-color:      darken($gray-dark, 5%) !default;
