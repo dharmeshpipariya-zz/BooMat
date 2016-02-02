@@ -5,6 +5,8 @@
   "private": true,
   "author": "Dharmesh Pipariya",
   "devDependencies": {
+	"connect": "latest",
+    "serve-static": "latest",
     "bower": "~1.3.12",
     "grunt": "^0.4.5",
     "grunt-contrib-cssmin": "^0.14.0",

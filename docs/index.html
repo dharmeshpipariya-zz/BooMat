@@ -1,114 +1,93 @@
----
-layout: home
-title: Bootstrap &middot; The world's most popular mobile-first and responsive front-end framework.
----
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="boomatApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Dharmesh Pipariya">
+    <link rel="icon" href="/favicon.ico">
 
-<main class="bd-masthead" id="content" role="main">
-  <div class="container">
-    <span class="bd-booticon outline">B</span>
-    <p class="lead">Bootstrap is the most popular HTML, CSS, and JS framework in the world for building responsive, mobile-first projects on the web.</p>
-    <p class="lead">
-      <a href="{{ site.baseurl }}/getting-started/download" class="btn btn-outline-inverse btn-lg" onclick="ga('send', 'event', 'Jumbotron actions', 'Download', 'Download {{ site.current_version }}');">Download Bootstrap</a>
-    </p>
-    <p class="version">Currently v{{ site.current_version }}</p>
-    {% include ads.html %}
-  </div>
-</main>
+    <title>Home - BooMat</title>
+    <link href="../dist/css/boomat.min.css" rel="stylesheet">
 
-<div class="bd-featurette">
-  <div class="container">
-    <h2 class="bd-featurette-title">Easy to get started.</h2>
-    <p class="lead">Quickly include Bootstrap's CSS and JS into any project. Use your favorite package manager, download the source, or use the Bootstrap CDN.</p>
+    <link href="style.css" rel="stylesheet">
+</head>
 
-    <div class="row">
-      <div class="col-sm-6 m-b-3">
-        <h4>Managed dependencies</h4>
-        <p>Include Bootstrap's source Sass and JavaScript files via Bower, Composer, Meteor, or npm. Package managed installs don't include documentation, but do include our Gruntfile and readme.</p>
-        <p>
-          <a class="btn btn-bs btn-outline" href="{{ site.baseurl }}/getting-started/download/#package-managers">View install methods</a>
-        </p>
-      </div>
-      <div class="col-sm-6 m-b-3">
-        <h4>Bootstrap CDN</h4>
-        <p>When you just need to include Bootstrap's compiled CSS and JS, use the Bootstrap CDN, free from the Max CDN folks.</p>
-{% highlight html %}
-<link rel="stylesheet" href="{{ site.cdn.css }}" integrity="{{ site.cdn.css_hash }}" crossorigin="anonymous">
-<script src="{{ site.cdn.js }}" integrity="{{ site.cdn.js_hash }}" crossorigin="anonymous"></script>
-{% endhighlight %}
-        <p class="text-muted">Not yet available, but hopefully soon!</p>
-      </div>
+<body data-ng-controller="indexController">
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Project name</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../navbar/">Default</a></li>
+                    <li><a href="../navbar-static-top/">Static top</a></li>
+                    <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- Main component for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <h1>Navbar example</h1>
+            <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+            <p>To see the difference between static and fixed top navbars, just scroll.</p>
+            <p>
+                <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+            </p>
+        </div>
+
+    </div> <!-- /container -->
+
+
+
+
+    <div id="main">
+        <div ng-view></div>
     </div>
+    <footer class="text-center">
+        <p>View the tutorial on <a href="http://scotch.io/tutorials/javascript/single-page-apps-with-angularjs-routing-and-templating">Scotch.io</a></p>
+        <p>View a tutorial on <a href="http://scotch.io/tutorials/javascript/animating-angularjs-apps-ngview">Animating Your Angular Single Page App</a></p>
+    </footer>
 
-    <hr class="half-rule m-t-0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="../dist/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
 
-    <p><strong>Looking for something simpler?</strong> Customized builds of Bootstrap's CSS and JS are also available.</p>
-    <a href="{{ site.baseurl }}/getting-started/download/#custom-builds" class="btn btn-bs btn-outline">More download options</a>
-  </div>
-</div>
 
-<div class="bd-featurette">
-  <div class="container">
-    <h2 class="bd-featurette-title">Designed for everyone, everywhere.</h2>
-    <p class="lead">Bootstrap makes front-end web development faster and easier. It's made for folks of all skill levels, devices of all shapes, and projects of all sizes.</p>
 
-    <div class="row">
-      <div class="col-sm-4 m-b-3">
-        <img src="{{ site.baseurl }}/assets/img/sass.png" alt="Sass support" class="img-fluid">
-        <h4>Preprocessor</h4>
-        <p>Bootstrap ships with vanilla CSS, but its source code utilizes <a href="http://sass-lang.com/">Sass</a>, a popular CSS preprocessor. Quickly get started with precompiled CSS or build on the source.</p>
-      </div>
-      <div class="col-sm-4 m-b-3">
-        <img src="{{ site.baseurl }}/assets/img/devices.png" alt="Responsive across devices" class="img-fluid">
-        <h4>One framework, every device.</h4>
-        <p>Bootstrap easily and efficiently scales your websites and applications with a single code base, from phones to tablets to desktops with CSS media queries.</p>
-      </div>
-      <div class="col-sm-4 m-b-3">
-        <img src="{{ site.baseurl }}/assets/img/components.png" alt="Components" class="img-fluid">
-        <h4>Full of features</h4>
-        <p>With Bootstrap, you get extensive and beautiful documentation for common HTML elements, dozens of custom HTML and CSS components, and awesome jQuery plugins.</p>
-      </div>
-    </div>
 
-    <hr class="half-rule m-t-0">
-
-    <p><strong>Bootstrap is open source!</strong> It's hosted, developed, and maintained on GitHub by folks like you.</p>
-    <a href="{{ site.repo }}" class="btn btn-bs btn-outline">View the GitHub project</a>
-  </div>
-</div>
-
-<div class="bd-featurette">
-  <div class="container">
-    <h2 class="bd-featurette-title">Official Bootstrap Themes.</h2>
-    <p class="lead">
-      Take Bootstrap to the next level with official premium themes. Each theme is its own toolkit featuring all of Bootstrap, brand new components and plugins, full docs, build tools, and more.
-    </p>
-
-    <p class="lead">
-      <a href="{{ site.themes }}" class="btn btn-bs btn-outline">Browse themes</a>
-    </p>
-
-    <img class="img-fluid center-block" src="{{ site.baseurl }}/assets/img/bs-themes.png" alt="Bootstrap Themes" width="1024" height="388">
-  </div>
-</div>
-
-<div class="bd-featurette">
-  <div class="container">
-    <h2 class="bd-featurette-title">Built with Bootstrap.</h2>
-    <p class="lead">Millions of amazing sites across the web are being built with Bootstrap. Get started on your own with our growing <a href="../examples">collection of examples</a> or by exploring some of our favorites.</p>
-
-    <div class="row bd-featured-sites">
-    {% for showcase in site.data.showcase %}
-      <div class="col-xs-6 col-sm-3">
-        <a href="{{ showcase.expo_url }}" target="_blank" title="{{ showcase.name }}">
-          <img src="{{ site.baseurl }}/assets/img/expo-{{ showcase.img }}.jpg" alt="{{ showcase.name }}" class="img-fluid">
-        </a>
-      </div>
-    {% endfor %}
-    </div>
-
-    <hr class="half-rule">
-
-    <p>We showcase dozens of inspiring projects built with Bootstrap on the Bootstrap Expo.</p>
-    <a href="{{ site.expo }}" class="btn btn-bs btn-outline">Explore the Expo</a>
-  </div>
-</div>

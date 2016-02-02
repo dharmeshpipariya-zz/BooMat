@@ -1,0 +1,19 @@
+
+// ------------------------
+// Jumbotron component
+// --------------------------------------------------
+  .container .jumbotron, 
+  .container-fluid .jumbotron {
+    background-color: #fff;
+    border-radius: 3px;
+    padding: $basespacing*6px;
+    @include shadow(1);
+
+    p { font-size: 1.5em; }
+
+    .footer {
+      margin-left: -$basespacing*6px;
+      margin-right: -$basespacing*6px;
+      border-top: 1px solid color(grey, 300);
+    }
+  }
