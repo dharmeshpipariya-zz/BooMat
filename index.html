@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="boomatApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Dharmesh Pipariya">
+    <link rel="icon" href="/docs/favicon.ico">
+
+    <title>Home - BooMat</title>
+    <link href="/dist/css/boomat.min.css" rel="stylesheet">
+
+    <link href="/docs/assets/css/style.css" rel="stylesheet">
+</head>
+
+<body data-ng-controller="indexController">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-dark navbar-fixed-top bg-inverse">
+        <button type="button" class="navbar-toggler hidden-sm-up" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Project name</a>
+        <div id="navbar">
+            <nav class="nav navbar-nav pull-xs-left">
+                <a class="nav-item nav-link" href="#">Dashboard</a>
+                <a class="nav-item nav-link" href="#">Settings</a>
+                <a class="nav-item nav-link" href="#">Profile</a>
+                <a class="nav-item nav-link" href="#">Help</a>
+            </nav>
+            <!--<form class="pull-xs-right">
+                <input type="text" class="form-control" placeholder="Search...">
+            </form>-->
+        </div>
+    </nav>
+    <div id="main" style="padding-top:60px;">
+        <div ng-view></div>
+    </div>
+    <footer class="text-center">
+        <p>View the tutorial on <a href="http://scotch.io/tutorials/javascript/single-page-apps-with-angularjs-routing-and-templating">Scotch.io</a></p>
+        <p>View a tutorial on <a href="http://scotch.io/tutorials/javascript/animating-angularjs-apps-ngview">Animating Your Angular Single Page App</a></p>
+    </footer>
+    <footer class="footer">
+        <div class="container">
+            <p class="wowload flipInX animated" style="visibility: visible; animation-name: flipInX;">
+                <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                <a href="#"><i class="fa fa-instagram fa-2x"></i></a>
+                <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+                <a href="#"><i class="fa fa-flickr fa-2x"></i></a>
+            </p>
+            <span class="text-muted">Powered by: <a href="#">BooMat</a></span>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="/dist/js/boomat.min.js"></script>
+    <script src="/docs/assets/js/app.js"></script>
+</body>
+</html>
+
+
+
+
