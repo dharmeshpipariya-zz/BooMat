@@ -3799,81 +3799,124 @@ button.close {
 @media (min-width: 960px) {
   .modal-lg {
     width: 900px; } }
-.tooltip {
+[data-tooltip] {
+  position: relative;
+  display: inline-block; }
+  [data-tooltip]:after {
+    position: absolute;
+    /*top: -500px;
+    left: -500px;*/
+    z-index: 1070;
+    /*display: inline-block;*/
+    max-width: 200px;
+    padding: 4px 8px;
+    margin-top: 8px;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 14px;
+    color: #fff;
+    text-align: center;
+    pointer-events: none;
+    visibility: hidden;
+    content: attr(data-tooltip);
+    background: #000;
+    border-radius: 2px;
+    opacity: 0; }
+  [data-tooltip]:hover {
+    /*&:before,*/ }
+    [data-tooltip]:hover:after {
+      visibility: visible;
+      opacity: 0.9; }
+
+[data-tooltip='']:before, [data-tooltip='']:after {
+  display: none !important; }
+
+/*.tooltip {
   position: absolute;
-  z-index: 1070;
+  z-index: $zindex-tooltip;
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  letter-spacing: normal;
-  line-break: auto;
-  line-height: 1.5;
-  text-align: left;
-  text-align: start;
-  text-decoration: none;
-  text-shadow: none;
-  text-transform: none;
-  white-space: normal;
-  word-break: normal;
-  word-spacing: normal;
-  font-size: 0.875rem;
+  // Our parent element can be arbitrary since tooltips are by default inserted as a sibling of their target element.
+  // So reset our font and text properties to avoid inheriting weird values.
+  @include reset-text();
+  font-size: $font-size-sm;
+  // Allow breaking very long words so they don't overflow the tooltip's bounds
   word-wrap: break-word;
-  opacity: 0; }
-  .tooltip.in {
-    opacity: 0.9; }
-  .tooltip.tooltip-top, .tooltip.bs-tether-element-attached-bottom {
-    padding: 5px 0;
-    margin-top: -3px; }
-    .tooltip.tooltip-top .tooltip-arrow, .tooltip.bs-tether-element-attached-bottom .tooltip-arrow {
+  opacity: 0;
+
+  &.in { opacity: $tooltip-opacity; }
+
+  &.tooltip-top,
+  &.bs-tether-element-attached-bottom {
+    padding: $tooltip-arrow-width 0;
+    margin-top: -$tooltip-margin;
+
+    .tooltip-arrow {
       bottom: 0;
       left: 50%;
-      margin-left: -5px;
-      border-width: 5px 5px 0;
-      border-top-color: #000; }
-  .tooltip.tooltip-right, .tooltip.bs-tether-element-attached-left {
-    padding: 0 5px;
-    margin-left: 3px; }
-    .tooltip.tooltip-right .tooltip-arrow, .tooltip.bs-tether-element-attached-left .tooltip-arrow {
+      margin-left: -$tooltip-arrow-width;
+      border-width: $tooltip-arrow-width $tooltip-arrow-width 0;
+      border-top-color: $tooltip-arrow-color;
+    }
+  }
+  &.tooltip-right,
+  &.bs-tether-element-attached-left {
+    padding: 0 $tooltip-arrow-width;
+    margin-left: $tooltip-margin;
+
+    .tooltip-arrow {
       top: 50%;
       left: 0;
-      margin-top: -5px;
-      border-width: 5px 5px 5px 0;
-      border-right-color: #000; }
-  .tooltip.tooltip-bottom, .tooltip.bs-tether-element-attached-top {
-    padding: 5px 0;
-    margin-top: 3px; }
-    .tooltip.tooltip-bottom .tooltip-arrow, .tooltip.bs-tether-element-attached-top .tooltip-arrow {
+      margin-top: -$tooltip-arrow-width;
+      border-width: $tooltip-arrow-width $tooltip-arrow-width $tooltip-arrow-width 0;
+      border-right-color: $tooltip-arrow-color;
+    }
+  }
+  &.tooltip-bottom,
+  &.bs-tether-element-attached-top {
+    padding: $tooltip-arrow-width 0;
+    margin-top: $tooltip-margin;
+
+    .tooltip-arrow {
       top: 0;
       left: 50%;
-      margin-left: -5px;
-      border-width: 0 5px 5px;
-      border-bottom-color: #000; }
-  .tooltip.tooltip-left, .tooltip.bs-tether-element-attached-right {
-    padding: 0 5px;
-    margin-left: -3px; }
-    .tooltip.tooltip-left .tooltip-arrow, .tooltip.bs-tether-element-attached-right .tooltip-arrow {
+      margin-left: -$tooltip-arrow-width;
+      border-width: 0 $tooltip-arrow-width $tooltip-arrow-width;
+      border-bottom-color: $tooltip-arrow-color;
+    }
+  }
+  &.tooltip-left,
+  &.bs-tether-element-attached-right {
+    padding: 0 $tooltip-arrow-width;
+    margin-left: -$tooltip-margin;
+
+    .tooltip-arrow {
       top: 50%;
       right: 0;
-      margin-top: -5px;
-      border-width: 5px 0 5px 5px;
-      border-left-color: #000; }
+      margin-top: -$tooltip-arrow-width;
+      border-width: $tooltip-arrow-width 0 $tooltip-arrow-width $tooltip-arrow-width;
+      border-left-color: $tooltip-arrow-color;
+    }
+  }
+}
 
+// Wrapper for the tooltip content
 .tooltip-inner {
-  max-width: 200px;
-  padding: 3px 8px;
-  color: #fff;
+  max-width: $tooltip-max-width;
+  padding: $tooltip-padding-y $tooltip-padding-x;
+  color: $tooltip-color;
   text-align: center;
-  background-color: #000;
-  border-radius: 0.25rem; }
+  background-color: $tooltip-bg;
+  @include border-radius($border-radius);
+}
 
+// Arrows
 .tooltip-arrow {
   position: absolute;
   width: 0;
   height: 0;
   border-color: transparent;
-  border-style: solid; }
-
+  border-style: solid;
+}*/
 .popover {
   position: absolute;
   top: 0;
