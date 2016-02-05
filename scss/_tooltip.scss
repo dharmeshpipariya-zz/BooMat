@@ -1,5 +1,46 @@
+// Base Attribute
+[data-tooltip] {
+    position: relative;
+    display: inline-block;
+
+    &:after {
+        position: absolute;
+        /*top: -500px;
+        left: -500px;*/
+        z-index: $zindex-tooltip;
+        /*display: inline-block;*/
+        max-width: $tooltip-max-width;
+        padding: 4px 8px;
+        margin-top: 8px;
+        font-size: 10px; //$tooltip-font-size;
+        font-weight: 500;
+        line-height: 14px;
+        color: #fff; //$tooltip-text-color;
+        text-align: center;
+        pointer-events: none;
+        visibility: hidden;
+        content: attr(data-tooltip);
+        background: #000; // $tooltip-background-color;
+        border-radius: 2px;
+        opacity: 0;
+    }
+
+    &:hover /*, &:focus*/ {
+        /*&:before,*/
+        &:after {
+            visibility: visible;
+            opacity: $tooltip-opacity;
+        }
+    }
+}
+
+[data-tooltip=''] {
+    &:before, &:after {
+        display: none !important;
+    }
+}
 // Base class
-.tooltip {
+/*.tooltip {
   position: absolute;
   z-index: $zindex-tooltip;
   display: block;
@@ -84,4 +125,4 @@
   height: 0;
   border-color: transparent;
   border-style: solid;
-}
+}*/
