@@ -21,5 +21,4 @@ boomatApp.config(function ($routeProvider) {
 });
 
 boomatApp.controller('indexController', function ($scope) { });
-
 boomatApp.controller('componentsController', function ($scope) { });
