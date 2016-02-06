@@ -10,10 +10,14 @@ boomatApp.config(function ($routeProvider) {
             templateUrl: 'docs/components/index.html',
             controller: 'componentsController'
         })
+        .when('/components/button', {
+            templateUrl: 'docs/components/button.html',
+            controller: 'componentsController'
+        })
         .when('/components/tooltip', {
             templateUrl: 'docs/components/tooltip.html',
             controller: 'componentsController'
-        })
+        });
 });
 
 boomatApp.controller('indexController', function ($scope) { });
