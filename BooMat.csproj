@@ -62,6 +62,7 @@
     <Content Include="dist\js\umd\tooltip.js" />
     <Content Include="dist\js\umd\util.js" />
     <Content Include="docs\assets\css\style.css" />
+    <Content Include="docs\assets\js\directives.js" />
     <Content Include="docs\assets\js\app.js" />
     <Content Include="docs\components\index.html" />
     <Content Include="docs\components\button.html" />
