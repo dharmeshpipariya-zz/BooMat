@@ -2,6 +2,7 @@
 _gh_pages
 _site
 bin
+.vs
 obj
 # Ignore ruby files
 .ruby-version
