@@ -22,3 +22,15 @@ boomatApp.config(function ($routeProvider) {
 
 boomatApp.controller('indexController', function ($scope) { });
 boomatApp.controller('componentsController', function ($scope) { });
+
+/*Directives*/
+boomatApp.directive("codeBlock", function () {
+    return {
+        restrict: "A",
+        link: function (scope, element, attrs) {
+            var text = element.html();
+            element.empty().text(text);
+            hljs.highlightBlock(element[0]);
+        }
+    };
+});
