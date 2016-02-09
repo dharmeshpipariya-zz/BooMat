@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="boomatApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Dharmesh Pipariya">
+    <link rel="icon" href="/docs/favicon.ico">
+    <title>Home - BooMat</title>
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css" rel="stylesheet">
+    <link href="/dist/css/boomat.min.css" rel="stylesheet">
+    <link href="/docs/assets/css/style.css" rel="stylesheet">
+</head>
+<body data-ng-controller="indexController">
+    <nav class="navbar navbar-dark navbar-fixed-top bg-inverse">
+        <button type="button" class="navbar-toggler hidden-sm-up" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <i class="ion-navicon"></i>
+        </button>
+        <a class="navbar-brand" href="#/">BooMat</a>
+        <div id="navbar">
+            <nav class="nav navbar-nav pull-xs-left">
+                <a class="nav-item nav-link" href="#/components">Components</a>
+                <a class="nav-item nav-link" href="#">Examples</a>
+            </nav>
+        </div>
+    </nav>
+    <div id="main" style="padding-top:60px;">
+        <div ng-view></div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>2016 © Boomat</p>
+                </div>
+                <div class="col-sm-12">
+                    <p>View the tutorial on <a href="http://scotch.io/tutorials/javascript/single-page-apps-with-angularjs-routing-and-templating">Scotch.io</a></p>
+                    <p>View a tutorial on <a href="http://scotch.io/tutorials/javascript/animating-angularjs-apps-ngview">Animating Your Angular Single Page App</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+    <!--<script src="/dist/js/boomat.min.js"></script>-->
+    <script src="/docs/assets/js/app.js"></script>
+    <script src="/docs/assets/js/directives.js"></script>
+</body>
+</html>

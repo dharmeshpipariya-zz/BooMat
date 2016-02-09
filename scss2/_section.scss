@@ -1,0 +1,11 @@
+//
+// Section
+// --------------------------------------------------
+
+
+.section {
+    position: relative;
+    border: 1px solid transparent;
+    padding: 35px 15px;
+    @include clearfix;
+}

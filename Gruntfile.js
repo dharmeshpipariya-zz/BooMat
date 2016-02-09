@@ -1,40 +1,46 @@
-/*!
- * BooMat's Gruntfile
- * https://github.com/DharmeshPipariya/BooMat
- * Copyright 2015 BooMat.
- */
-
 module.exports = function (grunt) {
+    // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        //watch: {
-        //    sass: {
-        //        files: ['sass/**/*.{scss,sass}', 'sass/_partials/**/*.{scss,sass}'],
-        //        tasks: ['sass:dist']
-        //    },
-        //    livereload: {
-        //        files: ['*.html', '*.php', 'js/**/*.{js,json}', 'css/*.css', 'img/**/*.{png,jpg,jpeg,gif,webp,svg}'],
-        //        options: {
-        //            livereload: true
-        //        }
-        //    }
-        //},
         sass: {
-            options: {
-                sourceMap: true,
-                outputStyle: 'compressed'
-            },
             dist: {
+                //options: {
+                //    style: 'compressed'
+                //},
                 files: {
-                    'dist/css/boomat.css': 'sass/_boomat.scss'
+                    //'Content/**/css/*.css': 'Content/**/sass/*.scss'
+                    'dist/css/boomat.css': 'scss/boomat.scss'
                 }
+            }
+        },
+        cssmin: {
+            my_target: {
+                options: {
+                    sourceMap: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'dist/css/',
+                    src: ['*.css', '!*.min.css'],
+                    dest: 'dist/css/',
+                    ext: '.min.css'
+                }]
+            }
+        },
+        watch: {
+            scripts: {
+                files: [
+                    'scss/*.scss'
+                ],
+                tasks: ['sass', 'cssmin']
             }
         }
     });
-    //grunt.registerTask('default', ['sass:dist', 'watch']);
-    grunt.registerTask('default', ['sass:dist']);
-    grunt.loadNpmTasks('grunt-sass');
-    //grunt.loadNpmTasks('grunt-contrib-watch');
-    //require('load-grunt-tasks')(grunt);
-    //grunt.registerTask('default', ['sass']);
+
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+
+    grunt.registerTask('default', ['sass', 'cssmin']);
+
 };
