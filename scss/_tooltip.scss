@@ -1,22 +1,4 @@
 // Base Attribute
-@keyframes pulse {
-    0% {
-        transform: scale(0);
-        opacity: 0;
-    }
-
-    50% {
-        transform: scale(0.99);
-    }
-
-    100% {
-        transform: scale(1) translateX(-50%);
-        opacity: 1;
-        visibility: visible;
-    }
-}
-
-
 [data-tooltip] {
     position: relative;
     display: inline-block;
@@ -76,12 +58,53 @@
     }
 
     &.tooltip-right {
+        &:after {
+            top: 50%;
+            left: 100%;
+            margin-top: 0;
+            margin-left: 4px;
+            transform-origin: left center;
+        }
+
+        &:hover {
+            &:after {
+                margin-top: 0;
+                margin-left: 8px;
+                transform: scale(1) translate(0,-50%);
+            }
+        }
     }
 
     &.tooltip-bottom {
+        &:after {
+            top: 100%;
+            margin-top: 4px;
+        }
+
+        &:hover {
+            &:after {
+                margin-top: 8px;
+            }
+        }
     }
 
     &.tooltip-left {
+        &:after {
+            top: 50%;
+            right: 100%;
+            left: auto;
+            margin-top: 0;
+            margin-right: 4px;
+            transform-origin: right center;
+        }
+
+        &:hover {
+            &:after {
+                margin-top: 0;
+                margin-right: 8px;
+                transform: scale(1) translate(0,-50%);
+            }
+        }
     }
 }
 
