@@ -14,6 +14,10 @@ boomatApp.config(function ($routeProvider) {
             templateUrl: 'docs/components/button.html',
             controller: 'componentsController'
         })
+        .when('/components/forms', {
+            templateUrl: 'docs/components/forms.html',
+            controller: 'componentsController'
+        })
         .when('/components/tooltip', {
             templateUrl: 'docs/components/tooltip.html',
             controller: 'componentsController'

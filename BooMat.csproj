@@ -66,6 +66,7 @@
     <Content Include="docs\assets\js\app.js" />
     <Content Include="docs\components\index.html" />
     <Content Include="docs\components\button.html" />
+    <Content Include="docs\components\forms.html" />
     <Content Include="docs\examples\album\album.css" />
     <Content Include="docs\examples\album\index.html" />
     <Content Include="docs\examples\blog\blog.css" />
